@@ -24,25 +24,28 @@
 // console.log(children);
 
 
-// let shoppingDetails = [
-//     { item: "Milk", unit: 2, unitPrice: 5.5 }, 
-//     { item: "Bread", unit: 2, unitPrice: 4.9 }, 
-//     { item: "Egg", unit: 1, unitPrice: 12.99 }, 
-//     { item: "lamb chop", unit: 1, unitPrice: 22.59 }, 
-//     { item: "Beef Scoth", unit: 1, unitPrice: 18.50 }, 
-//     { item: "Snow Peas", unit: 4, unitPrice: 3.99 }, 
-//     { item: "green beans", unit: 2, unitPrice: 3.5 }, 
-//     { item: "Baby Spinach", unit: 3, unitPrice: 5 }, 
-//     { item: "Potatoes", unit: 5, unitPrice: 3 }, 
-//     { item: "Carrot", unit: 2, unitPrice: 2 }, 
-//     { item: "Marshmellow", unit: 1, unitPrice: 4.9 }
-// ];
+let shoppingDetails = [
+    { item: "Milk", unit: 2, unitPrice: 5.5 }, 
+    { item: "Bread", unit: 2, unitPrice: 4.9 }, 
+    { item: "Egg", unit: 1, unitPrice: 12.99 }, 
+    { item: "lamb chop", unit: 1, unitPrice: 22.59 }, 
+    { item: "Beef Scoth", unit: 1, unitPrice: 18.50 }, 
+    { item: "Snow Peas", unit: 4, unitPrice: 3.99 }, 
+    { item: "green beans", unit: 2, unitPrice: 3.5 }, 
+    { item: "Baby Spinach", unit: 3, unitPrice: 5 }, 
+    { item: "Potatoes", unit: 5, unitPrice: 3 }, 
+    { item: "Carrot", unit: 2, unitPrice: 2 }, 
+    { item: "Marshmellow", unit: 1, unitPrice: 4.9 }
+];
 
 // let totalPrice = shoppingDetails
 //     .map(item => item.unit * item.unitPrice)
 //     .reduce((total, unitPrice) => total + unitPrice);
-    
-// console.log("Total Price = $" + totalPrice);
+
+let totalPrice = shoppingDetails
+    .reduce((total, item) => total + (item.unit * item.unitPrice), 0);
+
+console.log("Total Price = $" + totalPrice);
 
 // let calculateTotalPrice = (shoppingDetails) => {
 //         let totalPrice = 0;
