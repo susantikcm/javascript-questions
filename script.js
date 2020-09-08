@@ -21,7 +21,32 @@ clairee.addOoshie("Elsa", "Disney", "Glow");
 let children = [];
 children.push(drakee);
 children.push(clairee);
-// console.log(children);
+ console.log(children);
+
+// solution
+// [{
+//     name: "Drakee", 
+//     age: 8, 
+//     ooshies: [{
+//         character: "characterDarth Vader",
+//         category: "Star Wars",
+//         feature: "Dark"
+//     },
+//     {
+//         character: "Iron Man", 
+//         category: "Marvel", 
+//         feature: "Colour Changing"
+//     }]
+// },
+// {
+//     name: "Clairee", 
+//     age: 5, 
+//     ooshies: [{
+//         character: "Elsa", 
+//         category: "Disney", 
+//         feature: "Glow"
+//     }] 
+// }]
 
 // Q2 . Calculate the "total price" of the shopping details below. 
 let shoppingDetails = [
@@ -53,22 +78,26 @@ let calculateTotalPrice = (shoppingDetails) => {
 let totalPrice = shoppingDetails.reduce((total, item) => total + (item.unit * item.unitPrice), 0);
 //console.log("Total Price = $" + totalPrice);
 
+//Total price = S136.74
+
 
 // Q3. what is the output of the code below?
 let studentList = [ "Francois", "Gavin Pili", "Jahnavi Sangisetti", "Jenny Lam", "Kesiye Y Inengite", "Lloyd Hall", "Monali Dela", "Nav", "Nick Kehagias", "Robin", "Shane Hunter", "Susanti",  ]
 let findStudent = (letter) => studentList.filter((student) => student.charAt(0).toLowerCase() === letter.toLowerCase());
-console.log(findStudent("s"));
-
-let findStudent = (students, letter) => {
-    console.log("list of Students with name contains letter " + letter + ":");
-    for(var i=0; i<students.length; i++) {
-        if(students[i].charAt(0).toLowerCase() === letter.toLowerCase())
-        {
-            console.log(students[i].charAt(0).toLowerCase() + letter.toLowerCase() + " " +students[i]);
-        }
-    }
-}
+console.log(findStudent("r"));
+//or
+// let findStudent = (students, letter) => {
+//     console.log("list of Students with name contains letter " + letter + ":");
+//     for(var i=0; i<students.length; i++) {
+//         if(students[i].charAt(0).toLowerCase() === letter.toLowerCase()) {
+//             console.log(students[i].charAt(0).toLowerCase() + letter.toLowerCase() + " " +students[i]);
+//         }
+//     }
+// }
 // findStudent(studentList, "r");
+
+//solution
+//Robin
 
 /************************JS-03 Control Flow*********************************/
 //Part 1
@@ -111,7 +140,7 @@ let openingHours = (yearDayNumber, hourNumber) => {
 // openingHours(89, 18);
 
 // Challenge
-let openingHours = () => {
+let openingHoursWithDate = () => {
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 
     let aDate = new Date();
@@ -121,7 +150,7 @@ let openingHours = () => {
     console.log(days[day] + " " + hourNumber);  
     businessHhour(day, hourNumber);
 };
-// openingHours();
+// openingHoursWithDate();
 
 /************************JS-04 Arrays and Loops*********************************/
 // Exercise #1
