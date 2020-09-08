@@ -1,29 +1,29 @@
-// let Child = function(name, age) {
-//     this.name = name;
-//     this.age = age;
-//     this.ooshies = [];
-//     this.addOoshie = (character, category, feature) => {
-//         return this.ooshies.push({
-//             character: character,
-//             category: category,
-//             feature: feature
-//         });
-//     }
-// }
+// JavaScript Questions
+// Q1. what is the output of the code below?
+let Child = function(name, age) {
+    this.name = name;
+    this.age = age;
+    this.ooshies = [];
+    this.addOoshie = (character, category, feature) => {
+        return this.ooshies.push({
+            character: character,
+            category: category,
+            feature: feature
+        });
+    }
+}
+let drakee = new Child("Drakee", 8);
+drakee.addOoshie("characterDarth Vader", "Star Wars", "Dark");
+drakee.addOoshie("Iron Man",  "Marvel",  "Colour Changing");
+let clairee = new Child("Clairee", 5);
+clairee.addOoshie("Elsa", "Disney", "Glow");
 
-// let drakee = new Child("Drakee", 8);
-// drakee.addOoshie("characterDarth Vader", "Star Wars", "Dark");
-// drakee.addOoshie("Iron Man",  "Marvel",  "Colour Changing");
-// let clairee = new Child("Clairee", 5);
-// clairee.addOoshie("Elsa", "Disney", "Glow");
-
-// let children = [];
-// children.push(drakee);
-// children.push(clairee);
-
+let children = [];
+children.push(drakee);
+children.push(clairee);
 // console.log(children);
 
-
+// Q2 . Calculate the "total price" of the shopping details below. 
 let shoppingDetails = [
     { item: "Milk", unit: 2, unitPrice: 5.5 }, 
     { item: "Bread", unit: 2, unitPrice: 4.9 }, 
@@ -38,83 +38,39 @@ let shoppingDetails = [
     { item: "Marshmellow", unit: 1, unitPrice: 4.9 }
 ];
 
-// let totalPrice = shoppingDetails
-//     .map(item => item.unit * item.unitPrice)
-//     .reduce((total, unitPrice) => total + unitPrice);
+//Solution 1
+let calculateTotalPrice = (shoppingDetails) => {
+        let totalPrice = 0;
 
-let totalPrice = shoppingDetails
-    .reduce((total, item) => total + (item.unit * item.unitPrice), 0);
-
-console.log("Total Price = $" + totalPrice);
-
-// let calculateTotalPrice = (shoppingDetails) => {
-//         let totalPrice = 0;
-
-//         for(var item=0; item<shoppingDetails.length; item++) {
-//             totalPrice += shoppingDetails[item].unit * shoppingDetails[item].unitPrice;
-//         }
-//         console.log("Total Price = $" + totalPrice);
-// }
-
+        for(var item=0; item<shoppingDetails.length; item++) {
+            totalPrice += shoppingDetails[item].unit * shoppingDetails[item].unitPrice;
+        }
+        console.log("Total Price = $" + totalPrice);
+}
 // calculateTotalPrice(shoppingDetails);
 
-// let studentList = [ "Francois", "Gavin Pili", "Jahnavi Sangisetti", "Jenny Lam", "Kesiye Y Inengite", "Lloyd Hall", "Monali Dela", "Nav", "Nick Kehagias", "Robin", "Shane Hunter", "Susanti",  ]
-// let findStudent = (letter) => studentList.filter((student) => student.charAt(0).toLowerCase() === letter.toLowerCase());
-// console.log(findStudent("s"));
+//Solution 2
+let totalPrice = shoppingDetails.reduce((total, item) => total + (item.unit * item.unitPrice), 0);
+//console.log("Total Price = $" + totalPrice);
 
-// let findStudent = (students, letter) => {
-//     console.log("list of Students with name contains letter " + letter + ":");
-//     for(var i=0; i<students.length; i++) {
-//         if(students[i].charAt(0).toLowerCase() === letter.toLowerCase())
-//         {
-//             console.log(students[i].charAt(0).toLowerCase() + letter.toLowerCase() + " " +students[i]);
-//         }
-//     }
-// }
 
+// Q3. what is the output of the code below?
+let studentList = [ "Francois", "Gavin Pili", "Jahnavi Sangisetti", "Jenny Lam", "Kesiye Y Inengite", "Lloyd Hall", "Monali Dela", "Nav", "Nick Kehagias", "Robin", "Shane Hunter", "Susanti",  ]
+let findStudent = (letter) => studentList.filter((student) => student.charAt(0).toLowerCase() === letter.toLowerCase());
+console.log(findStudent("s"));
+
+let findStudent = (students, letter) => {
+    console.log("list of Students with name contains letter " + letter + ":");
+    for(var i=0; i<students.length; i++) {
+        if(students[i].charAt(0).toLowerCase() === letter.toLowerCase())
+        {
+            console.log(students[i].charAt(0).toLowerCase() + letter.toLowerCase() + " " +students[i]);
+        }
+    }
+}
 // findStudent(studentList, "r");
 
-// for(; ;){   console.log( "code busters best" ); }
-// for(var x=0 ; x <=6; x+=2) 
-//     for(var y=0 ; y <= 5; y+=5)  
-//         console.log("x :" + x + "   y :" + y);
-
-// var array = [
-//     1, 
-//     2, 
-//     [
-//         [3,4], 
-//         [5,6], 
-//         [ 
-//             [7,8]
-//         ]
-//     ]
-// ];
-// console.log(array[2][2][0][0]);
-
-var numbers = [
-    [1, 2, 3, 4],
-    [5, 6, 7],
-    [8, 9, 10, 11, 12]
-];
-
-// var arraySum = function(numbers) {
-//     var sums = [];
-//     for(var i = 0; i < numbers.length; i++) {
-//       var result = 0;
-//       for(var j = 0; j < numbers[i].length; j++) {
-//         result += numbers[i][j];
-//       }
-//       sums.push(result);
-//     }
-
-//     return sums;
-// }
-
-// var arraySum = (numbers) => (number).map(number => number.reduce(()))
-
-// console.log(arraySum(numbers));
-
+/************************JS-03 Control Flow*********************************/
 //Part 1
 let businessHhour = (dayNumber, hourNumber) => {
     if(dayNumber > 0 && dayNumber < 6) {
@@ -154,20 +110,20 @@ let openingHours = (yearDayNumber, hourNumber) => {
 };
 // openingHours(89, 18);
 
-//Challenge
-// let openingHours = () => {
-//     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
+// Challenge
+let openingHours = () => {
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 
-//     let aDate = new Date();
-//     let hourNumber = aDate.getHours();
-//     let day = aDate.getDay();
+    let aDate = new Date();
+    let hourNumber = aDate.getHours();
+    let day = aDate.getDay();
     
-//     console.log(days[day] + " " + hourNumber);  
-//     businessHhour(day, hourNumber);
-// };
+    console.log(days[day] + " " + hourNumber);  
+    businessHhour(day, hourNumber);
+};
 // openingHours();
 
-// JS-04 Arrays and Loops
+/************************JS-04 Arrays and Loops*********************************/
 // Exercise #1
 // Part 1
 let customer = ["Sofia", "David", "Juan"];
